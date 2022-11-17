@@ -1,15 +1,16 @@
-var blessed = require('blessed');
+const blessed = require('blessed');
+const clearConsole = require('clear-any-console');
 
 module.exports = ({items}) => {
 	// Create a screen object.
-	var screen = blessed.screen({
+	const screen = blessed.screen({
 		smartCSR: true
 	});
 
 	screen.title = 'oh file name';
 
 	// Create a box perfectly centered horizontally and vertically.
-	var box = blessed.List({
+	const box = blessed.List({
 		top: 'center',
 		left: 'center',
 		width: '80%',
@@ -42,15 +43,16 @@ module.exports = ({items}) => {
 	// Append our box to the screen.
 	screen.append(box);
 
-	// If our box is clicked, change the content.
-	box.on('down', function (data) {
-		box.down(1);
-	});
-
 	// Quit on Escape, q, or Control-C.
 	screen.key(['escape', 'q', 'C-c'], function (ch, key) {
 		return process.exit(0);
 	});
+
+	//TODO: some error popup somehow i need to clear them against blessed api instead
+	clearConsole();
+
+	// Focus our element.
+	box.focus();
 
 	screen.render();
 };
