@@ -23,6 +23,7 @@
 	"scripts": {
 		"format": "prettier --write \"./**/*.{js,json}\""
 	},
+	"repository": "fancn21th/oh-file-name",
 	"dependencies": {
 		"chalk": "4.1.2",
 		"cli-alerts": "1.2.2",
