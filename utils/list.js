@@ -1,16 +1,24 @@
 const blessed = require('blessed');
 const clearConsole = require('clear-any-console');
+const {green: g} = require('chalk');
 
 module.exports = ({items}) => {
 	// Create a screen object.
 	const screen = blessed.screen({
-		smartCSR: true
+		smartCSR: true,
+		forceUnicode: true,
+		fullUnicode: true
 	});
 
 	screen.title = 'oh file name';
 
-	// Create a box perfectly centered horizontally and vertically.
-	const box = blessed.List({
+	const text = blessed.box({
+		top: 1,
+		left: 1,
+		content: `${g('本机所有字体陈列如下')}\n${g('All fonts available on your OS')}`
+	});
+
+	const fontList = blessed.List({
 		top: 'center',
 		left: 'center',
 		width: '80%',
@@ -41,7 +49,8 @@ module.exports = ({items}) => {
 	});
 
 	// Append our box to the screen.
-	screen.append(box);
+	screen.append(text);
+	screen.append(fontList);
 
 	// Quit on Escape, q, or Control-C.
 	screen.key(['escape', 'q', 'C-c'], function (ch, key) {
@@ -52,7 +61,7 @@ module.exports = ({items}) => {
 	clearConsole();
 
 	// Focus our element.
-	box.focus();
+	fontList.focus();
 
 	screen.render();
 };

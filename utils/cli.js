@@ -27,7 +27,7 @@ const flags = {
 };
 
 const commands = {
-	font: {desc: `Print fonts available no your OS`},
+	font: {desc: `Print fonts available on your OS`},
 	help: {desc: `Print help info`}
 };
 
