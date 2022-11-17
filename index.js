@@ -12,8 +12,8 @@ const cli = require('./utils/cli');
 const log = require('./utils/log');
 
 // custom command
-const cmdDefault = require('./utils/commd-default');
-const cmdFont = require('./utils/commd-font');
+const cmdDefault = require('./utils/cmd-default');
+const cmdFont = require('./utils/cmd-font');
 
 const input = cli.input;
 const flags = cli.flags;
