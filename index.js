@@ -11,8 +11,9 @@ const init = require('./utils/init');
 const cli = require('./utils/cli');
 const log = require('./utils/log');
 
-// custom features
-const fonts = require('./utils/fonts');
+// custom command
+const cmdDefault = require('./utils/commd-default');
+const cmdFont = require('./utils/commd-font');
 
 const input = cli.input;
 const flags = cli.flags;
@@ -26,5 +27,7 @@ const {clear, debug} = flags;
 	debug && log(flags);
 
 	// magic comes below
-	input.includes(`font`) && fonts();
+	input.includes(`font`) && cmdFont();
+
+	await cmdDefault();
 })();
