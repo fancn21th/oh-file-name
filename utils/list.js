@@ -35,6 +35,7 @@ module.exports = ({items}) => {
 			selected: {bg: '#FFF', fg: '#000'}
 		},
 		mouse: true, // enable mouse then screen is scrollable
+		keys: true, // enable key then screen is movable
 		items
 	});
 
