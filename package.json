@@ -1,7 +1,7 @@
 {
 	"name": "oh-file-name",
 	"description": "translate chinese names into english file names",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"license": "MIT",
 	"bin": {
 		"oh-file-name": "index.js",
