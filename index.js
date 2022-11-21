@@ -27,7 +27,9 @@ const {clear, debug} = flags;
 	debug && log(flags);
 
 	// magic comes below
-	input.includes(`font`) && cmdFont();
+	input.includes(`font`) && (await cmdFont());
 
-	await cmdDefault();
+	// default command
+	// TODO: check font seems not right
+	!input.includes(`font`) && (await cmdDefault());
 })();
